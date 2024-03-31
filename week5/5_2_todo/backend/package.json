@@ -1,0 +1,23 @@
+{
+  "name": "todo-backend",
+  "version": "1.0.0",
+  "description": "This is a simple todo application  backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErnestPrashant/Todo.git"
+  },
+  "author": "prashant dubey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErnestPrashant/Todo/issues"
+  },
+  "homepage": "https://github.com/ErnestPrashant/Todo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.3"
+  }
+}

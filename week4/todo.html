@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App</title>
+</head>
+<script>
+    // document.createElement
+    // document.appendChild
+    // element.setAttribute
+    // element.children
+    let globalid = 1;
+
+    function markAsDone(todoId) {
+      const parent = document.getElementById(todoId);
+      parent.children[2].innerHTML = "Done!"
+    }
+
+    function makingtodos(title,description,id){
+        const child = document.createElement("div")
+        const grandchildtitle = document.createElement("div")
+        grandchildtitle.innerHTML = title
+        const grandchilddescription = document.createElement("div")
+        grandchilddescription.innerHTML = description
+        const grandchildbutton = document.createElement("button")
+        grandchildbutton.innerHTML = "Mark As Done"
+        grandchildbutton.setAttribute("onclick", `markAsDone (${id})`);
+        child.appendChild(grandchildtitle)
+        child.appendChild(grandchilddescription)
+        child.appendChild(grandchildbutton)
+        child.setAttribute("id", id)
+        return child;
+    }
+
+    function todosset(){
+        const title = document.getElementById("first").value
+        const description = document.getElementById("second").value
+        let parent = document.getElementById("container")
+        parent.appendChild(makingtodos(title, description, globalid++))
+    }
+</script>
+
+<body>
+    <input id="first" type="text" placeholder="title"> </input><br><br>
+    <input id="second" type="text" placeholder="decription"> </input><br><br>
+    <button onclick="todosset()">Add TODO</button>
+    <div id="container"></div>
+</body>
+</html>
+

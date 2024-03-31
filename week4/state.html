@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>state</title>
+</head>
+<body>
+    <input id="first" type="text" placeholder="title"> <br><br>
+    <input id="second" type="text" placeholder="decription"> <br><br>
+    <div id="container"></div>
+
+    <script>
+        function createChild(title,description,id){
+        const child = document.createElement("div")
+        const grandchildtitle = document.createElement("div")
+        grandchildtitle.innerHTML = title
+        const grandchilddescription = document.createElement("div")
+        grandchilddescription.innerHTML = description
+        const grandchildbutton = document.createElement("button")
+        grandchildbutton.innerHTML = "Mark As Done"
+        child.appendChild(grandchildtitle)
+        child.appendChild(grandchilddescription)
+        child.appendChild(grandchildbutton)
+        child.setAttribute("id", id)
+        return child;
+    }
+
+
+    function UpdateDOMAccToState(data){
+    let parent = document.getElementById("container")
+    parent.innerHTML = ""; //clearing previous todos
+    for(let i=0; i<data.length; i++){
+        const child = createChild(data[i].title, data[i].description, data[i].id)
+        parent.appendChild(child);
+    }
+    
+    }
+    setInterval(async function(){
+        const data = await fetch("https://sum-server.100xdevs.com/todos")
+        const json = await data.json();
+        UpdateDOMAccToState(json.todos)
+    }, 6000000)
+    </script>
+</body>
+</html>

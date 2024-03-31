@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document object model </title>
+</head>
+<script>
+    async function populateDiv(){
+    const a = parseInt(document.getElementById("First").value)
+    const b =parseInt(document.getElementById("Second").value)
+    const res = await fetch("https://sum-server.100xdevs.com/sum?a="+ a +"&b="+ b);
+    const ans = await res.text()
+    document.getElementById("finalsum").innerHTML = ans;   //or instead of ans just write a+b
+    }
+</script>
+<body>
+    <!-- <input id="First" oninput="populateDiv()" type="text" placeholder="First number "></input> <br><br>
+    <input id="Second" oninput="populateDiv()" type="text" placeholder="First second  "></input> <br><br> -->
+    <input id="First"  type="text" placeholder="First number "></input> <br><br>
+    <input id="Second" type="text" placeholder="First second  "></input> <br><br>
+    <button onclick="populateDiv()">Calculate Sum </button>
+    <div id="finalsum"></div>
+</body>
+</html>
