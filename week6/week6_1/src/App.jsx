@@ -27,10 +27,12 @@ function Header(props) {
   </div>
 }
 
-// const Header = React.memo(function Header({title}){
+// const Header = React.memo(fu<<<<nction Header({title}){
 //   return <div>
 //     {title}
 //   </div>
 // })
 
 export default App
+
+

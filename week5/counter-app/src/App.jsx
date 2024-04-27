@@ -1,26 +1,27 @@
 import {useState} from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+// function App() {
+//   const [count, setCount] = useState(0)
 
-  return (
-    <div>
-    <CustomButton count={count} setCount= {setCount}></CustomButton> 
-    </div>
-  )
-}
+//   return (
+//     <div>
+//     <CustomButton count={count} setCount= {setCount}></CustomButton> 
+//     </div>
+//   )
+// }
 
-//component
-function CustomButton(props){
-  function onClickHandler(){
-    props.setCount(props.count+1)
-  }
-  return <button onClick={onClickHandler}>
-    Counter {props.count}
-  </button>
-}
+// //component
+// function CustomButton(props){
+//   function onClickHandler(){
+//     props.setCount(props.count+1)
+//   }
+//   return <button onClick={onClickHandler}>
+//     Counter {props.count}
+//   </button>
+// }
 
-export default App
+// export default App
+
 
 //------------------------------------------------------------
 
@@ -36,12 +37,12 @@ export default App
 //     </div>
 //   )
 // }
-
+// export default App
 
 // --------------------------------
 // import {useState} from "react";
 
-/*function App() {
+function App() {
   const [todos, setTodos] = useState([{
     title: "Go to gym",
     description: "Go to gym from 7-9",
@@ -57,8 +58,6 @@ export default App
   }, ]); 
 
   function addTodo() {
-    // [1, 2]
-    // [...todos, 3] => [1, 2, 3]
     setTodos([...todos, {
       title: "new Todo",
       description: "desc of new todo"
@@ -84,4 +83,3 @@ function Todo(props) {
 }
 
 export default App
-*/
