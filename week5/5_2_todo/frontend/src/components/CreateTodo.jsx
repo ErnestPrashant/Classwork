@@ -1,17 +1,18 @@
 import { useState } from "react";
 
 export function CreateTodo() {
+    // react-query
     const [title, setValue] = useState("");
     const [description, setDescription] = useState("");
-    return <div>
-        <input class="reqstyle" type="text" placeholder="title" onChange={function(e){
+    return <div >
+        <input className="reqstyle" type="text" placeholder="title" onChange={function(e){
             setValue(e.target.value)
         }}/> <br />
-        <input class="reqstyle" type="text" placeholder="description" onChange={function(e){
+        <input className="reqstyle" type="text" placeholder="description" onChange={function(e){
             setDescription(e.target.value)
         }}/><br />
 
-        <button class="reqstyle" onClick={() => {
+        <button className="reqstyle" onClick={() => { 
             fetch("http://localhost:3000/todos", {
                 method: "POST",
                 body: JSON.stringify({

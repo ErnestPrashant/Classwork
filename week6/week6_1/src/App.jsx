@@ -4,7 +4,7 @@ import React, { useState } from "react"
 function App() {
   return (
     <>
-      <Header title="prashant dubey"></Header><br />
+      <Header title="Prashant dubey"></Header><br />
       <HeaderWithButton></HeaderWithButton>
     </>
   )
@@ -27,7 +27,7 @@ function Header(props) {
   </div>
 }
 
-// const Header = React.memo(fu<<<<nction Header({title}){
+// const Header = React.memo(function Header({title}){                  MEMOIZATION
 //   return <div>
 //     {title}
 //   </div>

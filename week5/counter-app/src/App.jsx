@@ -63,7 +63,7 @@ function App() {
       description: "desc of new todo"
     }])
   }
-
+console.log(setTodos);
   return (
     <div>
       <button onClick={addTodo}>Add a random todo</button>
