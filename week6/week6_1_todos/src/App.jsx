@@ -92,7 +92,7 @@ function Todo({title, description,}){
 //   </div>
 // }
 
-//ASSIGNMENT
+//ASSIGNMENT  USE EFFECT
 export default function App() {
 const[todos, setTodos] = useState([])
 
